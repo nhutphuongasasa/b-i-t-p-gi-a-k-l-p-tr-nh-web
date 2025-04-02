@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart - Green Garden</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-top">
+        <div class="container">
+          <div class="contact-info">
+            <span><i class="fas fa-phone"></i> +1 234 567 890</span>
+            <span><i class="fas fa-envelope"></i> info@greengarden.com</span>
+          </div>
+          <div class="user-actions">
+            <a href="#" id="login-btn"><i class="fas fa-user"></i> Đăng nhập</a>
+            <a href="#" id="register-btn"
+              ><i class="fas fa-user-plus"></i> Đăng ký</a
+            >
+            <a href="cart.html" class="cart-icon"
+              ><i class="fas fa-shopping-cart"></i>
+              <span id="cart-count">0</span></a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="main-header">
+        <div class="container">
+          <div class="logo">
+            <img src="images/logo.png" alt="Green Garden Logo" />
+            <h1>Green Garden</h1>
+          </div>
+          <nav>
+            <ul class="main-menu">
+              <li><a href="index.html">Trang chủ</a></li>
+              <li><a href="products.html">Sản phẩm</a></li>
+              <li><a href="product-detail.html">Sản phẩm nổi bật</a></li>
+              <li><a href="cart.html" class="active">Giỏ hàng</a></li>
+              <li><a href="checkout.html">Thanh toán</a></li>
+            </ul>
+          </nav>
+          <div class="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="page-header">
+      <div class="container">
+        <h1>Giỏ Hàng</h1>
+        <div class="breadcrumb">
+          <a href="index.html">Trang Chủ</a> / <span>Giỏ Hàng</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="cart-section">
+      <div class="container">
+        <div class="cart-empty" id="cart-empty">
+          <i class="fas fa-shopping-cart"></i>
+          <h2>Giỏ hàng của bạn đang trống</h2>
+          <p>Có vẻ như bạn chưa thêm sản phẩm nào vào giỏ hàng.</p>
+          <a href="products.html" class="btn btn-primary">Tiếp tục mua sắm</a>
+        </div>
+
+        <div class="cart-content" id="cart-content">
+          <div class="cart-table-container">
+            <table class="cart-table">
+              <thead>
+                <tr>
+                  <th>Sản phẩm</th>
+                  <th>Giá</th>
+                  <th>Số lượng</th>
+                  <th>Thành tiền</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="cart-items">
+                <!-- Các sản phẩm trong giỏ hàng sẽ được thêm vào ở đây -->
+              </tbody>
+            </table>
+          </div>
+
+          <div class="cart-actions">
+            <div class="coupon">
+              <input type="text" placeholder="Mã giảm giá" id="coupon-code" />
+              <button class="btn btn-outline" id="apply-coupon">
+                Áp dụng mã giảm giá
+              </button>
+            </div>
+            <button class="btn btn-outline" id="update-cart">
+              Cập nhật giỏ hàng
+            </button>
+          </div>
+
+          <div class="cart-summary">
+            <h3>Tổng giỏ hàng</h3>
+            <div class="summary-row">
+              <span>Thành tiền</span>
+              <span id="cart-subtotal">0</span>
+            </div>
+            <div class="summary-row">
+              <span>Vận chuyển</span>
+              <div class="shipping-options">
+                <div class="shipping-option">
+                  <input
+                    type="radio"
+                    id="free-shipping"
+                    name="shipping"
+                    value="0"
+                    checked
+                  />
+                  <label for="free-shipping"
+                    >Vận chuyển miễn phí (Đơn hàng trên 1.200.000)</label
+                  >
+                </div>
+                <div class="shipping-option">
+                  <input
+                    type="radio"
+                    id="standard-shipping"
+                    name="shipping"
+                    value="5.99"
+                  />
+                  <label for="standard-shipping"
+                    >Vận chuyển tiêu chuẩn: 143.000</label
+                  >
+                </div>
+                <div class="shipping-option">
+                  <input
+                    type="radio"
+                    id="express-shipping"
+                    name="shipping"
+                    value="12.99"
+                  />
+                  <label for="express-shipping"
+                    >Vận chuyển nhanh: 311.000</label
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="summary-row">
+              <span>Giảm giá</span>
+              <span id="cart-discount">00</span>
+            </div>
+            <div class="summary-row total">
+              <span>Tổng cộng</span>
+              <span id="cart-total">00</span>
+            </div>
+            <a href="checkout.html" class="btn btn-primary checkout-btn"
+              >Tiến hành thanh toán</a
+            >
+            <a href="products.html" class="continue-shopping"
+              >Tiếp tục mua sắm</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="recommended-products">
+      <div class="container">
+        <div class="section-title">
+          <h2>Có thể bạn cũng thích</h2>
+          <p>Sản phẩm được đề xuất cho bạn</p>
+        </div>
+        <div class="product-slider">
+          <div class="product-card">
+            <img src="images/products/apple.jpg" alt="Táo Tươi" />
+            <div class="product-badge">Sale</div>
+            <div class="product-content">
+              <h3>Táo Tươi</h3>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>(4.5)</span>
+              </div>
+              <div class="price">
+                <span class="current">120.000</span>
+                <span class="original">167.000</span>
+                <span class="unit">/ kg</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <img
+              src="images/products/broccoli.jpg"
+              alt="Bông Cải Xanh Hữu Cơ"
+            />
+            <div class="product-badge organic">Hữu Cơ</div>
+            <div class="product-content">
+              <h3>Bông Cải Xanh Hữu Cơ</h3>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>(5.0)</span>
+              </div>
+              <div class="price">
+                <span class="current">83.000</span>
+                <span class="unit">/ củ</span>
+              </div>
+              <button
+                class="add-to-cart"
+                data-id="2"
+                data-name="Bông Cải Xanh Hữu Cơ"
+                data-price="3.49"
+                data-image="broccoli.jpg"
+              >
+                Thêm vào giỏ hàng
+              </button>
+            </div>
+          </div>
+          <div class="product-card">
+            <img src="images/products/strawberry.jpg" alt="Dâu Tây Tươi" />
+            <div class="product-content">
+              <h3>Dâu Tây Tươi</h3>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span>(4.0)</span>
+              </div>
+              <div class="price">
+                <span class="current">143.000</span>
+                <span class="unit">/ hộp</span>
+              </div>
+              <button
+                class="add-to-cart"
+                data-id="3"
+                data-name="Dâu Tây Tươi"
+                data-price="5.99"
+                data-image="strawberry.jpg"
+              >
+                Thêm vào giỏ hàng
+              </button>
+            </div>
+          </div>
+          <div class="product-card">
+            <img src="images/products/carrot.jpg" alt="Cà Rốt Hữu Cơ" />
+            <div class="product-badge organic">Hữu Cơ</div>
+            <div class="product-content">
+              <h3>Cà Rốt Hữu Cơ</h3>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>(4.7)</span>
+              </div>
+              <div class="price">
+                <span class="current">71.000</span>
+                <span class="unit">/ bó</span>
+              </div>
+              <button
+                class="add-to-cart"
+                data-id="4"
+                data-name="Cà Rốt Hữu Cơ"
+                data-price="2.99"
+                data-image="carrot.jpg"
+              >
+                Thêm vào giỏ hàng
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <div class="container">
+        <div class="newsletter-content">
+          <h2>Đăng ký nhận bản tin của chúng tôi</h2>
+          <p>
+            Nhận những cập nhật mới nhất, ưu đãi và thông báo đặc biệt được gửi
+            trực tiếp đến hộp thư của bạn.
+          </p>
+          <form class="newsletter-form" id="newsletter-form">
+            <input
+              type="email"
+              placeholder="Địa chỉ email của bạn"
+              required
+              id="newsletter-email"
+            />
+            <button type="submit" class="btn btn-primary">Đăng ký</button>
+          </form>
+          <div id="newsletter-message"></div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-top">
+        <div class="container">
+          <div class="footer-columns">
+            <div class="footer-column">
+              <h3>Green Garden</h3>
+              <p>
+                Cung cấp trái cây và rau sạch, hữu cơ trực tiếp từ nông trại đến
+                bàn ăn của bạn từ năm 2010.
+              </p>
+              <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+              </div>
+            </div>
+            <div class="footer-column">
+              <h3>Liên Kết Nhanh</h3>
+              <ul>
+                <li><a href="index.html">Trang Chủ</a></li>
+                <li><a href="products.html">Sản Phẩm</a></li>
+                <li><a href="product-detail.html">Sản Phẩm Nổi Bật</a></li>
+                <li><a href="cart.html">Giỏ Hàng</a></li>
+                <li><a href="checkout.html">Thanh Toán</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h3>Dịch Vụ Khách Hàng</h3>
+              <ul>
+                <li><a href="#">Tài Khoản Của Tôi</a></li>
+                <li><a href="#">Theo Dõi Đơn Hàng</a></li>
+                <li><a href="#">Danh Sách Yêu Thích</a></li>
+                <li><a href="#">Điều Khoản & Điều Kiện</a></li>
+                <li><a href="#">Chính Sách Bảo Mật</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h3>Thông Tin Liên Hệ</h3>
+              <ul class="contact-info">
+                <li>
+                  <i class="fas fa-map-marker-alt"></i> 97, Man Thiện, P. Hiệp
+                  Phú, Q. 9, TP. HCM
+                </li>
+                <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+                <li><i class="fas fa-envelope"></i> info@greengarden.com</li>
+                <li>
+                  <i class="fas fa-clock"></i> Thứ 2 - Thứ 6: 8h sáng - 6h tối
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <p>&copy; 2023 Green Garden</p>
+          <div class="payment-methods">
+            <i class="fab fa-cc-visa"></i>
+            <i class="fab fa-cc-mastercard"></i>
+            <i class="fab fa-cc-amex"></i>
+            <i class="fab fa-cc-paypal"></i>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modal Đăng Nhập -->
+    <div class="modal" id="login-modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Đăng Nhập Vào Tài Khoản Của Bạn</h2>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="login-email">Email</label>
+            <input type="email" id="login-email" required />
+          </div>
+          <div class="form-group">
+            <label for="login-password">Mật khẩu</label>
+            <input type="password" id="login-password" required />
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Đăng Nhập</button>
+          </div>
+          <p>
+            Chưa có tài khoản?
+            <a href="#" id="show-register">Đăng ký tại đây</a>
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <!-- Modal Đăng Ký -->
+    <div class="modal" id="register-modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Tạo Tài Khoản</h2>
+        <form id="register-form">
+          <div class="form-group">
+            <label for="register-name">Họ và Tên</label>
+            <input type="text" id="register-name" required />
+          </div>
+          <div class="form-group">
+            <label for="register-email">Email</label>
+            <input type="email" id="register-email" required />
+          </div>
+          <div class="form-group">
+            <label for="register-password">Mật khẩu</label>
+            <input type="password" id="register-password" required />
+          </div>
+          <div class="form-group">
+            <label for="register-confirm-password">Xác Nhận Mật khẩu</label>
+            <input type="password" id="register-confirm-password" required />
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Đăng Ký</button>
+          </div>
+          <p>
+            Đã có tài khoản? <a href="#" id="show-login">Đăng nhập tại đây</a>
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout - Green Garden</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-top">
+        <div class="container">
+          <div class="contact-info">
+            <span><i class="fas fa-phone"></i> +1 234 567 890</span>
+            <span><i class="fas fa-envelope"></i> info@greengarden.com</span>
+          </div>
+          <div class="user-actions">
+            <a href="#" id="login-btn"><i class="fas fa-user"></i> Đăng nhập</a>
+            <a href="#" id="register-btn"
+              ><i class="fas fa-user-plus"></i>Đăng ký</a
+            >
+            <a href="cart.html" class="cart-icon"
+              ><i class="fas fa-shopping-cart"></i>
+              <span id="cart-count">0</span></a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="main-header">
+        <div class="container">
+          <div class="logo">
+            <img src="images/logo.png" alt="Green Garden Logo" />
+            <h1>Green Garden</h1>
+          </div>
+          <nav>
+            <ul class="main-menu">
+              <li><a href="index.html">Trang chủ</a></li>
+              <li><a href="products.html">Sản phẩm</a></li>
+              <li>
+                <a href="product-detail.html">Sản phẩm nổi bật</a>
+              </li>
+              <li><a href="cart.html">Giỏ hàng</a></li>
+              <li><a href="checkout.html" class="active">Thanh toán</a></li>
+            </ul>
+          </nav>
+          <div class="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="page-header">
+      <div class="container">
+        <h1>Thanh toán</h1>
+        <div class="breadcrumb">
+          <a href="index.html">Trang chủ</a> /
+          <a href="cart.html">Giỏ hàng</a> /
+          <span>Thanh toán</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="checkout-section">
+      <div class="container">
+        <div class="checkout-notice">
+          <p>
+            Khách hàng quay lại?
+            <a href="#" id="checkout-login-btn">Nhấp vào đây để đăng nhập</a>
+          </p>
+          <p>
+            Có mã giảm giá?
+            <a href="#" id="checkout-coupon-btn"
+              >Nhấp vào đây để nhập mã của bạn</a
+            >
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="coupon-form" id="coupon-form-container">
+      <p>Nếu bạn có mã giảm giá, vui lòng áp dụng nó dưới đây.</p>
+      <div class="coupon-input">
+        <input
+          type="text"
+          placeholder="Mã Giảm Giá"
+          id="checkout-coupon-code"
+        />
+        <button class="btn btn-outline" id="checkout-apply-coupon">
+          Áp Dụng Mã Giảm Giá
+        </button>
+      </div>
+    </div>
+
+    <div class="checkout-grid">
+      <div class="billing-details">
+        <h3>Chi tiết thanh toán</h3>
+        <form id="checkout-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="first-name">Họ <span class="required">*</span></label>
+              <input type="text" id="first-name" required />
+            </div>
+            <div class="form-group">
+              <label for="last-name">Tên <span class="required">*</span></label>
+              <input type="text" id="last-name" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="company-name">Tên công ty (Tùy chọn)</label>
+            <input type="text" id="company-name" />
+          </div>
+
+          <div class="form-group">
+            <label for="street-address"
+              >Địa chỉ <span class="required">*</span></label
+            >
+            <input
+              type="text"
+              id="street-address"
+              placeholder="Số nhà, Tên đường, ...."
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="city"
+              >Thị trấn / Thành phố <span class="required">*</span></label
+            >
+            <input type="text" id="city" required />
+          </div>
+
+          <div class="form-group">
+            <label for="zip">Mã bưu điện <span class="required">*</span></label>
+            <input type="text" id="zip" required />
+          </div>
+          <div class="form-group">
+            <label for="phone"
+              >Số điện thoại <span class="required">*</span></label
+            >
+            <input type="tel" id="phone" required />
+          </div>
+          <div class="form-group">
+            <label for="email"
+              >Địa chỉ Email <span class="required">*</span></label
+            >
+            <input type="email" id="email" required />
+          </div>
+
+          <div class="account-fields" id="account-fields">
+            <div class="form-group">
+              <label for="account-password"
+                >Mật khẩu tài khoản <span class="required">*</span></label
+              >
+              <input type="password" id="account-password" />
+            </div>
+          </div>
+
+          <div class="shipping-fields" id="shipping-fields">
+            <!-- Các trường địa chỉ giao hàng sẽ tương tự như các trường địa chỉ thanh toán -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="shipping-first-name"
+                  >Họ <span class="required">*</span></label
+                >
+                <input type="text" id="shipping-first-name" />
+              </div>
+              <div class="form-group">
+                <label for="shipping-last-name"
+                  >Tên <span class="required">*</span></label
+                >
+                <input type="text" id="shipping-last-name" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="shipping-company-name">Tên công ty (Tùy chọn)</label>
+              <input type="text" id="shipping-company-name" />
+            </div>
+            <div class="form-group">
+              <label for="shipping-country"
+                >Quốc gia / Vùng <span class="required">*</span></label
+              >
+              <select id="shipping-country">
+                <option value="">Chọn quốc gia / vùng</option>
+                <option value="US">Hoa Kỳ</option>
+                <option value="CA">Canada</option>
+                <option value="UK">Vương quốc Anh</option>
+                <option value="AU">Úc</option>
+                <option value="DE">Đức</option>
+                <option value="FR">Pháp</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="shipping-street-address"
+                >Địa chỉ đường phố <span class="required">*</span></label
+              >
+              <input
+                type="text"
+                id="shipping-street-address"
+                placeholder="Số nhà và tên đường"
+              />
+              <input
+                type="text"
+                id="shipping-street-address-2"
+                placeholder="Căn hộ, suite, đơn vị, v.v. (tùy chọn)"
+              />
+            </div>
+            <div class="form-group">
+              <label for="shipping-city"
+                >Thị trấn / Thành phố <span class="required">*</span></label
+              >
+              <input type="text" id="shipping-city" />
+            </div>
+            <div class="form-group">
+              <label for="shipping-state"
+                >Tỉnh / Thành phố <span class="required">*</span></label
+              >
+              <select id="shipping-state">
+                <option value="">Chọn một tỉnh</option>
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA">California</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="shipping-zip"
+                >Mã bưu điện <span class="required">*</span></label
+              >
+              <input type="text" id="shipping-zip" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="order-notes">Ghi chú đơn hàng (Tùy chọn)</label>
+            <textarea
+              id="order-notes"
+              placeholder="Ghi chú về đơn hàng của bạn, ví dụ ghi chú đặc biệt cho việc giao hàng"
+            ></textarea>
+          </div>
+        </form>
+      </div>
+
+      <div class="order-summary">
+        <h3>Đơn hàng của bạn</h3>
+        <div class="order-review">
+          <table>
+            <thead>
+              <tr>
+                <th>Sản phẩm</th>
+                <th>Tổng cộng</th>
+              </tr>
+            </thead>
+            <tbody id="checkout-items">
+              <!-- Các mặt hàng sẽ được thêm vào đây động -->
+            </tbody>
+            <tfoot>
+              <tr class="subtotal">
+                <th>Tổng phụ</th>
+                <td id="checkout-subtotal">$0.00</td>
+              </tr>
+              <tr class="shipping">
+                <th>Vận chuyển</th>
+                <td id="checkout-shipping">$0.00</td>
+              </tr>
+              <tr class="discount">
+                <th>Giảm giá</th>
+                <td id="checkout-discount">$0.00</td>
+              </tr>
+              <tr class="total">
+                <th>Tổng cộng</th>
+                <td id="checkout-total">$0.00</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+
+        <div class="payment-methods">
+          <div class="payment-method">
+            <input
+              type="radio"
+              id="payment-bank"
+              name="payment-method"
+              value="bank"
+              checked
+            />
+            <label for="payment-bank">Chuyển khoản ngân hàng trực tiếp</label>
+            <div class="payment-description">
+              <p>
+                Hãy thanh toán trực tiếp vào tài khoản ngân hàng của chúng tôi.
+                Vui lòng sử dụng Mã đơn hàng của bạn làm tham chiếu thanh toán.
+                Đơn hàng của bạn sẽ không được giao cho đến khi số tiền thanh
+                toán được xác nhận trong tài khoản của chúng tôi.
+              </p>
+            </div>
+          </div>
+          <div class="payment-method">
+            <input
+              type="radio"
+              id="payment-check"
+              name="payment-method"
+              value="check"
+            />
+            <label for="payment-check">Thanh toán bằng séc</label>
+            <div class="payment-description">
+              <p>
+                Vui lòng gửi séc đến Tên cửa hàng, Địa chỉ cửa hàng, Thị trấn
+                cửa hàng, Tỉnh / Quận cửa hàng, Mã bưu điện cửa hàng.
+              </p>
+            </div>
+          </div>
+          <div class="payment-method">
+            <input
+              type="radio"
+              id="payment-cash"
+              name="payment-method"
+              value="cash"
+            />
+            <label for="payment-cash">Thanh toán khi nhận hàng</label>
+            <div class="payment-description">
+              <p>Thanh toán bằng tiền mặt khi giao hàng.</p>
+            </div>
+          </div>
+          <div class="payment-method">
+            <input
+              type="radio"
+              id="payment-card"
+              name="payment-method"
+              value="card"
+            />
+            <label for="payment-card">Thẻ tín dụng / Thẻ ghi nợ</label>
+            <div class="payment-description">
+              <p>
+                Thanh toán an toàn bằng thẻ tín dụng hoặc thẻ ghi nợ của bạn.
+              </p>
+              <div class="card-icons">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-amex"></i>
+                <i class="fab fa-cc-discover"></i>
+              </div>
+              <div class="card-fields">
+                <div class="form-group">
+                  <label for="card-number">Số thẻ</label>
+                  <input
+                    type="text"
+                    id="card-number"
+                    placeholder="1234 5678 9012 3456"
+                  />
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="card-expiry">Ngày hết hạn</label>
+                    <input type="text" id="card-expiry" placeholder="MM/YY" />
+                  </div>
+                  <div class="form-group">
+                    <label for="card-cvc">CVC</label>
+                    <input type="text" id="card-cvc" placeholder="123" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="terms-conditions">
+          <div class="checkbox-group">
+            <input type="checkbox" id="terms-agree" required />
+            <label for="terms-agree">
+              Tôi đã đọc và đồng ý với các
+              <a href="#">điều khoản và điều kiện</a>
+              <span class="required">*</span>
+            </label>
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn-primary place-order-btn"
+          id="place-order"
+        >
+          Đặt hàng
+        </button>
+      </div>
+    </div>
+
+    <section class="order-complete" id="order-complete">
+      <div class="container">
+        <div class="order-complete-content">
+          <div class="order-icon">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <h2>Cảm ơn bạn. Đơn hàng của bạn đã được nhận.</h2>
+          <div class="order-details">
+            <div class="order-detail-item">
+              <span>Số Đơn Hàng:</span>
+              <strong id="order-number">12345</strong>
+            </div>
+            <div class="order-detail-item">
+              <span>Ngày:</span>
+              <strong id="order-date">15 Tháng 5, 2023</strong>
+            </div>
+            <div class="order-detail-item">
+              <span>Tổng Tiền:</span>
+              <strong id="order-total-display">$0.00</strong>
+            </div>
+            <div class="order-detail-item">
+              <span>Phương Thức Thanh Toán:</span>
+              <strong id="order-payment-method"
+                >Chuyển Khoản Ngân Hàng Trực Tiếp</strong
+              >
+            </div>
+          </div>
+          <p>
+            Chúng tôi đã nhận được đơn hàng của bạn và sẽ bắt đầu xử lý ngay lập
+            tức. Bạn sẽ nhận được xác nhận qua email sớm.
+          </p>
+          <div class="order-actions">
+            <a href="products.html" class="btn btn-outline">Tiếp Tục Mua Sắm</a>
+            <a href="#" class="btn btn-primary">Theo Dõi Đơn Hàng</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-top">
+        <div class="container">
+          <div class="footer-columns">
+            <div class="footer-column">
+              <h3>Green Garden</h3>
+              <p>
+                Cung cấp trái cây và rau sạch, hữu cơ trực tiếp từ nông trại đến
+                bàn ăn của bạn từ năm 2010.
+              </p>
+              <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+              </div>
+            </div>
+            <div class="footer-column">
+              <h3>Liên Kết Nhanh</h3>
+              <ul>
+                <li><a href="index.html">Trang Chủ</a></li>
+                <li><a href="products.html">Sản Phẩm</a></li>
+                <li><a href="product-detail.html">Sản Phẩm Nổi Bật</a></li>
+                <li><a href="cart.html">Giỏ Hàng</a></li>
+                <li><a href="checkout.html">Thanh Toán</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h3>Dịch Vụ Khách Hàng</h3>
+              <ul>
+                <li><a href="#">Tài Khoản Của Tôi</a></li>
+                <li><a href="#">Theo Dõi Đơn Hàng</a></li>
+                <li><a href="#">Danh Sách Yêu Thích</a></li>
+                <li><a href="#">Điều Khoản & Điều Kiện</a></li>
+                <li><a href="#">Chính Sách Bảo Mật</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h3>Thông Tin Liên Hệ</h3>
+              <ul class="contact-info">
+                <li>
+                  <i class="fas fa-map-marker-alt"></i> 97, Man Thiện, P. Hiệp
+                  Phú, Q. 9, TP. HCM
+                </li>
+                <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+                <li><i class="fas fa-envelope"></i> info@greengarden.com</li>
+                <li>
+                  <i class="fas fa-clock"></i> Thứ 2 - Thứ 6: 8h sáng - 6h tối
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <p>&copy; 2023 Green Garden</p>
+          <div class="payment-methods">
+            <i class="fab fa-cc-visa"></i>
+            <i class="fab fa-cc-mastercard"></i>
+            <i class="fab fa-cc-amex"></i>
+            <i class="fab fa-cc-paypal"></i>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modal Đăng Nhập -->
+    <div class="modal" id="login-modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Đăng Nhập Vào Tài Khoản Của Bạn</h2>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="login-email">Email</label>
+            <input type="email" id="login-email" required />
+          </div>
+          <div class="form-group">
+            <label for="login-password">Mật khẩu</label>
+            <input type="password" id="login-password" required />
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Đăng Nhập</button>
+          </div>
+          <p>
+            Chưa có tài khoản?
+            <a href="#" id="show-register">Đăng ký tại đây</a>
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <!-- Modal Đăng Ký -->
+    <div class="modal" id="register-modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Tạo Tài Khoản</h2>
+        <form id="register-form">
+          <div class="form-group">
+            <label for="register-name">Họ và Tên</label>
+            <input type="text" id="register-name" required />
+          </div>
+          <div class="form-group">
+            <label for="register-email">Email</label>
+            <input type="email" id="register-email" required />
+          </div>
+          <div class="form-group">
+            <label for="register-password">Mật khẩu</label>
+            <input type="password" id="register-password" required />
+          </div>
+          <div class="form-group">
+            <label for="register-confirm-password">Xác Nhận Mật khẩu</label>
+            <input type="password" id="register-confirm-password" required />
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Đăng Ký</button>
+          </div>
+          <p>
+            Đã có tài khoản? <a href="#" id="show-login">Đăng nhập tại đây</a>
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

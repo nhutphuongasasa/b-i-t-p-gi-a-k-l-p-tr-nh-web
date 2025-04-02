@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Green Garden - Organic Fruits & Vegetables</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-top">
+        <div class="container">
+          <div class="contact-info">
+            <span><i class="fas fa-phone"></i> +1 234 567 890</span>
+            <span><i class="fas fa-envelope"></i> info@greengarden.com</span>
+          </div>
+          <div class="user-actions">
+            <a href="#" id="login-btn"><i class="fas fa-user"></i> Đăng nhập</a>
+            <a href="#" id="register-btn"
+              ><i class="fas fa-user-plus"></i> Đăng ký</a
+            >
+            <a href="cart.html" class="cart-icon"
+              ><i class="fas fa-shopping-cart"></i>
+              <span id="cart-count">0</span></a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="main-header">
+        <div class="container">
+          <div class="logo">
+            <img src="images/logo.png" alt="Green Garden Logo" />
+            <h1>Green Garden</h1>
+          </div>
+          <nav>
+            <ul class="main-menu">
+              <li><a href="index.html" class="active">Trang chủ</a></li>
+              <li><a href="products.html">Sản phẩm</a></li>
+              <li><a href="product-detail.html">Sản phẩm nổi bật</a></li>
+              <li><a href="cart.html">Giỏ hàng</a></li>
+              <li><a href="checkout.html">Thanh toán</a></li>
+            </ul>
+          </nav>
+          <div class="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="carousel">
+      <div class="carousel-container">
+        <div
+          class="carousel-slide active"
+          style="background-image: url('images/banners/banner-1.jpg')"
+        >
+          <div class="carousel-content">
+            <h2>Tươi mới & hưu cơ</h2>
+            <h1>Trái cây & Rau củ</h1>
+            <p>
+              Trực tiếp từ trang trại đến bàn ăn của bạn. 100% hữu cơ và tươi
+              ngon.
+            </p>
+            <div class="carousel-buttons">
+              <a href="products.html" class="btn btn-primary">Mua ngay</a>
+              <a href="#about-section" class="btn btn-secondary"
+                >Tìm hiểu thêm</a
+              >
+            </div>
+          </div>
+        </div>
+        <div
+          class="carousel-slide"
+          style="background-image: url('images/banners/banner-2.jpg')"
+        >
+          <div class="carousel-content">
+            <h2>Ưu đãi đặc biệtbiệt</h2>
+            <h1>Giảm 20% trong tuần này</h1>
+            <p>
+              Nhận ngay ưu đãi hấp dẫn cho tất cả các sản phẩm hữu cơ. Chương
+              trình có thời hạn.
+            </p>
+            <div class="carousel-buttons">
+              <a href="products.html" class="btn btn-primary">Mua Ngay</a>
+              <a href="#" class="btn btn-secondary">Xem Ưu Đãi</a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="carousel-slide"
+          style="background-image: url('images/banners/banner-3.jpg')"
+        >
+          <div class="carousel-content">
+            <h2>Gợi Ý Theo Mùa</h2>
+            <h1>Bộ Sưu Tập Trái Cây Mùa Hè</h1>
+            <p>
+              Thưởng thức những loại trái cây theo mùa tươi ngon nhất, được thu
+              hoạch vào thời điểm chín mọng nhất.
+            </p>
+            <div class="carousel-buttons">
+              <a href="products.html" class="btn btn-primary">Shop Now</a>
+              <a href="#" class="btn btn-secondary">Learn More</a>
+            </div>
+          </div>
+        </div>
+
+        <button class="carousel-arrow prev">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="carousel-arrow next">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <div class="carousel-dots">
+          <span class="dot active" data-slide="0"></span>
+          <span class="dot" data-slide="1"></span>
+          <span class="dot" data-slide="2"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <div class="feature-box">
+          <i class="fas fa-truck"></i>
+          <h3>Miễn Phí Vận Chuyển</h3>
+          <p>Cho đơn hàng trên 1.200.000</p>
+        </div>
+        <div class="feature-box">
+          <i class="fas fa-leaf"></i>
+          <h3>100% Hữu Cơ</h3>
+          <p>Sản phẩm được chứng nhận</p>
+        </div>
+        <div class="feature-box">
+          <i class="fas fa-undo"></i>
+          <h3>Dễ Dàng Đổi Trả</h3>
+          <p>Chính sách hoàn trả trong 30 ngày</p>
+        </div>
+        <div class="feature-box">
+          <i class="fas fa-headset"></i>
+          <h3>Hỗ Trợ 24/7</h3>
+          <p>Dịch vụ khách hàng</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="categories">
+      <div class="container">
+        <div class="section-title">
+          <h2>Danh Mục Của Chúng Tôi</h2>
+          <p>Khám phá nhiều loại sản phẩm tươi ngon của chúng tôi</p>
+        </div>
+        <div class="category-grid">
+          <div
+            class="category-card"
+            style="background-image: url('images/categories/vegetables.jpg')"
+          >
+            <div class="category-content">
+              <h3>Rau Củ</h3>
+              <p>Hơn 30 sản phẩm</p>
+              <a href="products.html" class="btn-small">Xem Tất Cả</a>
+            </div>
+          </div>
+          <div
+            class="category-card"
+            style="background-image: url('images/categories/fruits.jpg')"
+          >
+            <div class="category-content">
+              <h3>Trái Cây</h3>
+              <p>Hơn 25 sản phẩm</p>
+              <a href="products.html" class="btn-small">Xem Tất Cả</a>
+            </div>
+          </div>
+          <div
+            class="category-card"
+            style="background-image: url('images/categories/organic.jpg')"
+          >
+            <div class="category-content">
+              <h3>Hữu Cơ</h3>
+              <p>Hơn 20 sản phẩm</p>
+              <a href="products.html" class="btn-small">Xem Tất Cả</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-products">
+      <div class="container">
+        <div class="section-title">
+          <h2>Sản Phẩm Nổi Bật</h2>
+          <p>Sản phẩm bán chạy nhất tuần này</p>
+        </div>
+        <div class="product-grid">
+          <div class="product-card">
+            <img src="images/products/apple.jpg" alt="Táo Tươi" />
+            <div class="product-badge">Giảm Giá</div>
+            <div class="product-content">
+              <h3>Táo Tươi</h3>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>(4.5)</span>
+              </div>
+              <div class="price">
+                <span class="current">80.000</span>
+                <span class="original">112.000</span>
+                <span class="unit">/ kg</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <img src="images/products/broccoli.jpg" alt="Bông Cải Hữu Cơ" />
+            <div class="product-badge organic">Hữu Cơ</div>
+            <div class="product-content">
+              <h3>Bông Cải Hữu Cơ</h3>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>(5.0)</span>
+              </div>
+              <div class="price">
+                <span class="current">70.000</span>
+                <span class="unit">/ củ</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <img src="images/products/strawberry.jpg" alt="Dâu Tươi" />
+            <div class="product-content">
+              <h3>Dâu Tươi</h3>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span>(4.0)</span>
+              </div>
+              <div class="price">
+                <span class="current">100.000</span>
+                <span class="unit">/ hộp</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <img src="images/products/carrot.jpg" alt="Cà Rốt Hữu Cơ" />
+            <div class="product-badge organic">Hữu Cơ</div>
+            <div class="product-content">
+              <h3>Cà Rốt Hữu Cơ</h3>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>(4.7)</span>
+              </div>
+              <div class="price">
+                <span class="current">50.000</span>
+                <span class="unit">/ bó</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="view-all-container">
+          <a href="products.html" class="btn btn-outline"
+            >Xem Tất Cả Sản Phẩm</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="special-offer"
+      style="background-image: url('images/banners/banner-3.jpg')"
+    >
+      <div class="container">
+        <div class="offer-content">
+          <h2>Ưu Đãi Đặc Biệt</h2>
+          <h3>Giảm 20% Trong Tuần Này</h3>
+          <p>
+            Sử dụng mã FRESH20 khi thanh toán để nhận giảm giá 20% trên toàn bộ
+            đơn hàng của bạn. Áp dụng đến hết tuần này.
+          </p>
+          <a href="products.html" class="btn btn-primary">Mua Ngay</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section" id="about-section">
+      <div class="container">
+        <div class="about-grid">
+          <div
+            class="about-image"
+            style="background-image: url('images/banners/banner-1.jpg')"
+          ></div>
+          <div class="about-content">
+            <div class="section-title">
+              <h2>Về Green Garden</h2>
+            </div>
+            <p>
+              Green Garden được thành lập vào năm 2010 với sứ mệnh đơn giản:
+              cung cấp những sản phẩm trái cây và rau quả tươi ngon, chất lượng
+              cao trực tiếp từ nông trại đến bàn ăn của bạn.
+            </p>
+            <p>
+              Bắt đầu như một doanh nghiệp gia đình nhỏ, Green Garden đã trở
+              thành một tên tuổi đáng tin cậy trong lĩnh vực sản phẩm hữu cơ,
+              phục vụ hàng nghìn khách hàng trong khi vẫn duy trì cam kết với
+              chất lượng, sự bền vững và hỗ trợ các nông dân địa phương.
+            </p>
+            <p>
+              Chúng tôi tin rằng mọi người đều xứng đáng có được thực phẩm tươi
+              ngon, bổ dưỡng, được trồng với sự quan tâm cho cả con người và
+              hành tinh.
+            </p>
+            <div class="about-stats">
+              <div class="stat-item">
+                <h3>15+</h3>
+                <p>Năm Kinh Nghiệm</p>
+              </div>
+              <div class="stat-item">
+                <h3>50+</h3>
+                <p>Trang Trại Đối Tác</p>
+              </div>
+              <div class="stat-item">
+                <h3>10k+</h3>
+                <p>Khách Hàng Hạnh Phúc</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="container">
+        <div class="section-title">
+          <h2>Khách Hàng Nói Gì Về Chúng Tôi</h2>
+          <p>Những lời chứng thực từ khách hàng hài lòng của chúng tôi</p>
+        </div>
+        <div class="testimonial-slider">
+          <div class="testimonial-card active">
+            <div class="quote">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p>
+              Rau luôn tươi ngon và giao hàng nhanh chóng. Tôi đã là khách hàng
+              thường xuyên hơn một năm nay và chưa bao giờ thất vọng.
+            </p>
+            <div class="customer">
+              <img
+                src="images/customers/customer-1.jpg"
+                alt="Sarah Johnson"
+                width="60"
+                height="60"
+                style="border-radius: 50%"
+              />
+              <div class="customer-info">
+                <h4>Nguyễn Văn A</h4>
+                <span>Khách Hàng Thân Thiết</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="quote">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p>
+              Trái cây hữu cơ thật tuyệt vời! Bạn thực sự có thể cảm nhận sự
+              khác biệt. Dịch vụ khách hàng của họ cũng xuất sắc - họ đã nhanh
+              chóng giải quyết một vấn đề tôi gặp phải với đơn hàng.
+            </p>
+            <div class="customer">
+              <img
+                src="images/customers/customer-2.jpg"
+                alt="Michael Brown"
+                width="60"
+                height="60"
+                style="border-radius: 50%"
+              />
+              <div class="customer-info">
+                <h4>Nguyễn Văn B</h4>
+                <span>Khách Hàng Trung Thành</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="quote">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p>
+              Tôi yêu thích sự đa dạng của các sản phẩm theo mùa mà họ cung cấp.
+              Nó đã giúp tôi khám phá những loại trái cây và rau củ mới mà tôi
+              không thường thử. Rất đáng để thử!
+            </p>
+            <div class="customer">
+              <img
+                src="images/customers/customer-3.jpg"
+                alt="Emily Davis"
+                width="60"
+                height="60"
+                style="border-radius: 50%"
+              />
+              <div class="customer-info">
+                <h4>Nguyễn Văn C</h4>
+                <span>Khách Hàng Mới</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-dots">
+          <span class="dot active" data-index="0"></span>
+          <span class="dot" data-index="1"></span>
+          <span class="dot" data-index="2"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="why-choose-us">
+      <div class="container">
+        <div class="section-title">
+          <h2>Tại Sao Chọn Green Garden?</h2>
+          <p>
+            Những yếu tố làm chúng tôi khác biệt so với các nhà cung cấp thực
+            phẩm khác
+          </p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <h3>100% Hữu Cơ</h3>
+            <p>
+              Tất cả sản phẩm của chúng tôi đều được chứng nhận hữu cơ, trồng mà
+              không sử dụng thuốc trừ sâu hay hóa chất độc hại.
+            </p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-truck"></i>
+            </div>
+            <h3>Trực Tiếp Từ Nông Trại</h3>
+            <p>
+              Chúng tôi giao hàng trực tiếp từ nông trại đến cửa nhà bạn, đảm
+              bảo độ tươi ngon tối đa.
+            </p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3>Hỗ Trợ Nông Dân Địa Phương</h3>
+            <p>
+              Chúng tôi hợp tác với các nông dân địa phương để hỗ trợ nông
+              nghiệp bền vững trong cộng đồng của mình.
+            </p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-seedling"></i>
+            </div>
+            <h3>Đa Dạng Mùa Vụ</h3>
+            <p>
+              Chúng tôi cung cấp nhiều loại sản phẩm theo mùa để đảm bảo hương
+              vị và giá trị dinh dưỡng tốt nhất.
+            </p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-recycle"></i>
+            </div>
+            <h3>Bao Bì Thân Thiện Với Môi Trường</h3>
+            <p>
+              Chúng tôi sử dụng bao bì phân hủy sinh học và có thể tái chế để
+              giảm thiểu tác động đến môi trường.
+            </p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-hand-holding-heart"></i>
+            </div>
+            <h3>Tham Gia Cộng Đồng</h3>
+            <p>
+              Chúng tôi đóng góp một phần lợi nhuận của mình cho các ngân hàng
+              thực phẩm và vườn cộng đồng địa phương.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <div class="container">
+        <div class="newsletter-content">
+          <h2>Đăng Ký Nhận Bản Tin Của Chúng Tôi</h2>
+          <p>
+            Nhận những cập nhật mới nhất, ưu đãi và thông báo đặc biệt được gửi
+            trực tiếp đến hộp thư của bạn.
+          </p>
+          <form class="newsletter-form" id="newsletter-form">
+            <input
+              type="email"
+              placeholder="Địa Chỉ Email Của Bạn"
+              required
+              id="newsletter-email"
+            />
+            <button type="submit" class="btn btn-primary">Đăng Ký</button>
+          </form>
+          <div id="newsletter-message"></div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-top">
+        <div class="container">
+          <div class="footer-columns">
+            <div class="footer-column">
+              <h3>Green Garden</h3>
+              <p>
+                Cung cấp trái cây và rau sạch, hữu cơ trực tiếp từ nông trại đến
+                bàn ăn của bạn từ năm 2010.
+              </p>
+              <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+              </div>
+            </div>
+            <div class="footer-column">
+              <h3>Liên Kết Nhanh</h3>
+              <ul>
+                <li><a href="index.html">Trang Chủ</a></li>
+                <li><a href="products.html">Sản Phẩm</a></li>
+                <li><a href="product-detail.html">Sản Phẩm Nổi Bật</a></li>
+                <li><a href="cart.html">Giỏ Hàng</a></li>
+                <li><a href="checkout.html">Thanh Toán</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h3>Dịch Vụ Khách Hàng</h3>
+              <ul>
+                <li><a href="#">Tài Khoản Của Tôi</a></li>
+                <li><a href="#">Theo Dõi Đơn Hàng</a></li>
+                <li><a href="#">Danh Sách Yêu Thích</a></li>
+                <li><a href="#">Điều Khoản & Điều Kiện</a></li>
+                <li><a href="#">Chính Sách Bảo Mật</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h3>Thông Tin Liên Hệ</h3>
+              <ul class="contact-info">
+                <li>
+                  <i class="fas fa-map-marker-alt"></i> 97, Man Thiện, P. Hiệp
+                  Phú, Q. 9, TP. HCM
+                </li>
+                <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+                <li><i class="fas fa-envelope"></i> info@greengarden.com</li>
+                <li>
+                  <i class="fas fa-clock"></i> Thứ 2 - Thứ 6: 8h sáng - 6h tối
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <p>&copy; 2023 Green Garden</p>
+          <div class="payment-methods">
+            <i class="fab fa-cc-visa"></i>
+            <i class="fab fa-cc-mastercard"></i>
+            <i class="fab fa-cc-amex"></i>
+            <i class="fab fa-cc-paypal"></i>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modal Đăng Nhập -->
+    <div class="modal" id="login-modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Đăng Nhập Vào Tài Khoản Của Bạn</h2>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="login-email">Email</label>
+            <input type="email" id="login-email" required />
+          </div>
+          <div class="form-group">
+            <label for="login-password">Mật khẩu</label>
+            <input type="password" id="login-password" required />
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Đăng Nhập</button>
+          </div>
+          <p>
+            Chưa có tài khoản?
+            <a href="#" id="show-register">Đăng ký tại đây</a>
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <!-- Modal Đăng Ký -->
+    <div class="modal" id="register-modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Tạo Tài Khoản</h2>
+        <form id="register-form">
+          <div class="form-group">
+            <label for="register-name">Họ và Tên</label>
+            <input type="text" id="register-name" required />
+          </div>
+          <div class="form-group">
+            <label for="register-email">Email</label>
+            <input type="email" id="register-email" required />
+          </div>
+          <div class="form-group">
+            <label for="register-password">Mật khẩu</label>
+            <input type="password" id="register-password" required />
+          </div>
+          <div class="form-group">
+            <label for="register-confirm-password">Xác Nhận Mật khẩu</label>
+            <input type="password" id="register-confirm-password" required />
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Đăng Ký</button>
+          </div>
+          <p>
+            Đã có tài khoản? <a href="#" id="show-login">Đăng nhập tại đây</a>
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,324 @@
+<!-- product -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products - Green Garden</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-top">
+        <div class="container">
+          <div class="contact-info">
+            <span><i class="fas fa-phone"></i> +1 234 567 890</span>
+            <span><i class="fas fa-envelope"></i> info@greengarden.com</span>
+          </div>
+          <div class="user-actions">
+            <a href="#" id="login-btn"><i class="fas fa-user"></i> Đăng nhập</a>
+            <a href="#" id="register-btn"
+              ><i class="fas fa-user-plus"></i>Đăng ký</a
+            >
+            <a href="cart.html" class="cart-icon"
+              ><i class="fas fa-shopping-cart"></i>
+              <span id="cart-count">0</span></a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="main-header">
+        <div class="container">
+          <div class="logo">
+            <img src="images/logo.png" alt="Green Garden Logo" />
+            <h1>Green Garden</h1>
+          </div>
+          <nav>
+            <ul class="main-menu">
+              <li><a href="index.html">Trang chủ</a></li>
+              <li><a href="products.html" class="active">Sản phẩm</a></li>
+              <li>
+                <a href="product-detail.html">Sản phẩm nổi bật</a>
+              </li>
+              <li><a href="cart.html">Giỏ hàng</a></li>
+              <li><a href="checkout.html">Thanh toán</a></li>
+            </ul>
+          </nav>
+          <div class="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="page-header">
+      <div class="container">
+        <h1>Tất cả sản phẩm</h1>
+        <div class="breadcrumb">
+          <a href="index.html">Trang chủ</a> / <span>Sản phẩm</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="products-area">
+      <div class="container">
+        <div class="products-grid-container">
+          <aside class="sidebar">
+            <div class="widget categories-widget">
+              <h3>Danh mục</h3>
+              <ul>
+                <li>
+                  <a href="#" class="category-filter" data-category="all"
+                    >Tất cả sản phẩm <span>(30)</span></a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="category-filter" data-category="vegetables"
+                    >Rau củ <span>(15)</span></a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="category-filter" data-category="fruits"
+                    >Trái cây <span>(12)</span></a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="category-filter" data-category="organic"
+                    >Hữu cơ <span>(20)</span></a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="category-filter" data-category="seasonal"
+                    >Mùa vụ <span>(8)</span></a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="widget filter-widget">
+              <h3>Lọc theo giá</h3>
+              <div class="price-range">
+                <input
+                  type="range"
+                  min="0"
+                  max="200000"
+                  value="200000"
+                  class="slider"
+                  id="priceRange"
+                />
+                <div class="price-inputs">
+                  <span>0</span>
+                  <span id="price-value">200.000</span>
+                </div>
+                <button class="btn btn-small" id="filter-price-btn">Lọc</button>
+              </div>
+            </div>
+
+            <div class="widget tags-widget">
+              <h3>Tags phổ biến</h3>
+              <div class="tags">
+                <a href="#" class="tag-filter" data-tag="organic">Hữu cơ</a>
+                <a href="#" class="tag-filter" data-tag="vegetable">Rau củ</a>
+                <a href="#" class="tag-filter" data-tag="fruit">Trái cây</a>
+                <a href="#" class="tag-filter" data-tag="fresh">Tươi</a>
+                <a href="#" class="tag-filter" data-tag="seasonal">Mùa vụ</a>
+                <a href="#" class="tag-filter" data-tag="healthy">Lành mạnh</a>
+              </div>
+            </div>
+          </aside>
+
+          <div class="products-main">
+            <div class="products-header">
+              <div class="products-count">
+                <p>Hiển thị <span id="product-count">30</span> sản phẩm</p>
+              </div>
+              <div class="products-sort">
+                <label for="sort-by">Sắp xếp theo:</label>
+                <select id="sort-by">
+                  <option value="default">Mặc định</option>
+                  <option value="price-low">Giá: Từ thấp đến cao</option>
+                  <option value="price-high">Giá: Từ cao đến thấp</option>
+                  <option value="name-asc">Tên: A đến Z</option>
+                  <option value="name-desc">Tên: Z đến A</option>
+                </select>
+              </div>
+              <div class="view-options">
+                <button class="grid-view active" id="grid-view-btn">
+                  <i class="fas fa-th"></i>
+                </button>
+                <button class="list-view" id="list-view-btn">
+                  <i class="fas fa-list"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="product-grid" id="product-container">
+              <!-- Products will be dynamically loaded here with images from images/products/ folder -->
+            </div>
+
+            <div class="pagination" id="pagination">
+              <a href="#" class="active" data-page="1">1</a>
+              <a href="#" data-page="2">2</a>
+              <a href="#" data-page="3">3</a>
+              <a href="#" class="next" data-page="next"
+                ><i class="fas fa-chevron-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <div class="container">
+        <div class="newsletter-content">
+          <h2>Đăng Ký Nhận Bản Tin Của Chúng Tôi</h2>
+          <p>
+            Nhận những cập nhật mới nhất, ưu đãi và thông báo đặc biệt được gửi
+            trực tiếp đến hộp thư của bạn.
+          </p>
+          <form class="newsletter-form" id="newsletter-form">
+            <input
+              type="email"
+              placeholder="Địa Chỉ Email Của Bạn"
+              required
+              id="newsletter-email"
+            />
+            <button type="submit" class="btn btn-primary">Đăng Ký</button>
+          </form>
+          <div id="newsletter-message"></div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-top">
+        <div class="container">
+          <div class="footer-columns">
+            <div class="footer-column">
+              <h3>Green Garden</h3>
+              <p>
+                Cung cấp trái cây và rau sạch, hữu cơ trực tiếp từ nông trại đến
+                bàn ăn của bạn từ năm 2010.
+              </p>
+              <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+              </div>
+            </div>
+            <div class="footer-column">
+              <h3>Liên Kết Nhanh</h3>
+              <ul>
+                <li><a href="index.html">Trang Chủ</a></li>
+                <li><a href="products.html">Sản Phẩm</a></li>
+                <li><a href="product-detail.html">Sản Phẩm Nổi Bật</a></li>
+                <li><a href="cart.html">Giỏ Hàng</a></li>
+                <li><a href="checkout.html">Thanh Toán</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h3>Dịch Vụ Khách Hàng</h3>
+              <ul>
+                <li><a href="#">Tài Khoản Của Tôi</a></li>
+                <li><a href="#">Theo Dõi Đơn Hàng</a></li>
+                <li><a href="#">Danh Sách Yêu Thích</a></li>
+                <li><a href="#">Điều Khoản & Điều Kiện</a></li>
+                <li><a href="#">Chính Sách Bảo Mật</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h3>Thông Tin Liên Hệ</h3>
+              <ul class="contact-info">
+                <li>
+                  <i class="fas fa-map-marker-alt"></i> 97, Man Thiện, P. Hiệp
+                  Phú, Q. 9, TP. HCM
+                </li>
+                <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+                <li><i class="fas fa-envelope"></i> info@greengarden.com</li>
+                <li>
+                  <i class="fas fa-clock"></i> Thứ 2 - Thứ 6: 8h sáng - 6h tối
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <p>&copy; 2023 Green Garden</p>
+          <div class="payment-methods">
+            <i class="fab fa-cc-visa"></i>
+            <i class="fab fa-cc-mastercard"></i>
+            <i class="fab fa-cc-amex"></i>
+            <i class="fab fa-cc-paypal"></i>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modal Đăng Nhập -->
+    <div class="modal" id="login-modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Đăng Nhập Vào Tài Khoản Của Bạn</h2>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="login-email">Email</label>
+            <input type="email" id="login-email" required />
+          </div>
+          <div class="form-group">
+            <label for="login-password">Mật khẩu</label>
+            <input type="password" id="login-password" required />
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Đăng Nhập</button>
+          </div>
+          <p>
+            Chưa có tài khoản?
+            <a href="#" id="show-register">Đăng ký tại đây</a>
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <!-- Modal Đăng Ký -->
+    <div class="modal" id="register-modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Tạo Tài Khoản</h2>
+        <form id="register-form">
+          <div class="form-group">
+            <label for="register-name">Họ và Tên</label>
+            <input type="text" id="register-name" required />
+          </div>
+          <div class="form-group">
+            <label for="register-email">Email</label>
+            <input type="email" id="register-email" required />
+          </div>
+          <div class="form-group">
+            <label for="register-password">Mật khẩu</label>
+            <input type="password" id="register-password" required />
+          </div>
+          <div class="form-group">
+            <label for="register-confirm-password">Xác Nhận Mật khẩu</label>
+            <input type="password" id="register-confirm-password" required />
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Đăng Ký</button>
+          </div>
+          <p>
+            Đã có tài khoản? <a href="#" id="show-login">Đăng nhập tại đây</a>
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
